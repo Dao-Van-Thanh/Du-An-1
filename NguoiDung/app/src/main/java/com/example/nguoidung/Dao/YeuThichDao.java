@@ -28,7 +28,7 @@ public class YeuThichDao {
                 String sqlQuery = "select yt.idYeuThich,da.image,da.tenDoAn, da.gia,yt.idDoAn from yeuThich yt \n" +
                         "inner join DoAn da on yt.idDoAn = da.idDoAn\n" +
                         "inner join ThanhVien tv on yt.idTV = tv.idTV\n" +
-                        "where yt.idTV = " + idTV;
+                        "where yt.idTV = " + idTV + " ORDER BY yt.idYeuThich DESC";
 
                 Statement statement = this.connection.createStatement(); // khởi tạo cấu trúc truy vấn
 

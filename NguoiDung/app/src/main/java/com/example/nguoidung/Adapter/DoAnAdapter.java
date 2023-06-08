@@ -32,6 +32,7 @@ import com.example.nguoidung.Dao.YeuThichDao;
 import com.example.nguoidung.Object.DoAn;
 import com.example.nguoidung.Object.HoaDon;
 import com.example.nguoidung.R;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -64,7 +65,7 @@ public class DoAnAdapter extends RecyclerView.Adapter<DoAnAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imageView.setImageBitmap(CovertBitmap(ls.get(position).getImage()));
+        Picasso.get().load(ls.get(position).getImage()).into(holder.imageView);
         holder.txtTenDoAn.setText(ls.get(position).getTenDoAn());
         holder.txtGiaDoAn.setText(String.valueOf(ls.get(position).getGia()));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +90,7 @@ public class DoAnAdapter extends RecyclerView.Adapter<DoAnAdapter.ViewHolder>{
         Button btnYeuThich = view.findViewById(R.id.trang_chu_dialog_mua_do_an_btn_them_yeu_thich);
         Button btnMua = view.findViewById(R.id.trang_chu_dialog_mua_do_an_btn_mua_ngay);
 
-        imageView.setImageBitmap(CovertBitmap(ls.get(position).getImage()));
+        Picasso.get().load(ls.get(position).getImage()).into(imageView);
         txtTenMonAn.setText(ls.get(position).getTenDoAn());
         txtGiaMonAn.setText(String.valueOf(ls.get(position).getGia()));
         edtSoLuong.setText("1");

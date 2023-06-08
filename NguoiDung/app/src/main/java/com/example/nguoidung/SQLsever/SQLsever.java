@@ -14,7 +14,7 @@ public class SQLsever {
         //10.24.13.4
         //192.168.0.17
         //192.168.0.4
-        String ip = "192.168.0.4", port = "1433", user = "sa", pass = "003127", db = "DuAn1";
+        String ip = "192.168.0.7", port = "1433", user = "sa", pass = "003127", db = "DuAn1";
         StrictMode.ThreadPolicy threadPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(threadPolicy);
         try {

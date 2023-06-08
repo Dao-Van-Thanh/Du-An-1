@@ -39,6 +39,7 @@ import com.example.nhom_8.Object.HoaDon;
 import com.example.nhom_8.Object.LoaiDoAn;
 import com.example.nhom_8.R;
 import com.example.nhom_8.Object.DoAn;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -76,7 +77,7 @@ public class DoAnAdapter extends RecyclerView.Adapter<DoAnAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imageView.setImageBitmap(CovertBitmap(ls.get(position).getImage()));
+        Picasso.get().load(ls.get(position).getImage()).into(holder.imageView);
         holder.txtTenDoAn.setText(ls.get(position).getTenDoAn());
         holder.txtGiaDoAn.setText(String.valueOf(ls.get(position).getGia()));
         holder.txtTenLoaiDoAn.setText(ls.get(position).getTenLoaiDoAn());
@@ -116,21 +117,6 @@ public class DoAnAdapter extends RecyclerView.Adapter<DoAnAdapter.ViewHolder>{
             btnSua = itemView.findViewById(R.id.item_do_an_btnSua);
             btnXoa = itemView.findViewById(R.id.item_do_an_btnDeXoa);
         }
-    }
-    public Bitmap CovertBitmap(String path) {
-        Bitmap mbitmap = null;
-        try {
-            URL url = new URL(path);
-            InputStream inputStream = url.openConnection().getInputStream();
-
-            mbitmap = BitmapFactory.decodeStream(inputStream);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return mbitmap;
     }
     public void update(int gravity,int position){
         LayoutInflater infl = ((Activity)context).getLayoutInflater();

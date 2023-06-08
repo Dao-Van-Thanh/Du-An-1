@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
     public static final int EDITTEXT_DELAY = 100;
     public static final int BUTTON_DELAY = 250;
     public static final int VIEW_DELAY = 250;
-    public static final int CHECKBOK_DELAY = 0;
+    public static final int CHECKBOK_DELAY = 99;
     public static final int TEXTVIEW_DELAY = 250;
 
     Button btnDangNhap, btnDangKy;

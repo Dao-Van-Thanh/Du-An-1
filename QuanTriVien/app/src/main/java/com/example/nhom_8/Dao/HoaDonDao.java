@@ -32,7 +32,8 @@ public class HoaDonDao {
 
                 String sqlQuery = "select hd.idHoaDon,an.tenDoAn, an.gia, hd.soLuong, hd.tongGia,hd.ngayMua,tv.tenNguoiDung from HoaDon hd\n" +
                         "  inner join DoAn an on hd.idDoAn = an.idDoAn\n" +
-                        "  inner join ThanhVien tv on tv.idTV = hd.idTV" ;
+                        "  inner join ThanhVien tv on tv.idTV = hd.idTV\n" +
+                        "  ORDER BY hd.idHoaDon DESC";
 
                 Statement statement = this.connection.createStatement(); // khởi tạo cấu trúc truy vấn
 

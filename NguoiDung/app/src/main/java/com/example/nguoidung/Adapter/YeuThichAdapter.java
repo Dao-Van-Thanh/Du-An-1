@@ -30,6 +30,7 @@ import com.example.nguoidung.Dao.YeuThichDao;
 import com.example.nguoidung.Object.HoaDon;
 import com.example.nguoidung.Object.YeuThich;
 import com.example.nguoidung.R;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,7 +64,7 @@ public class YeuThichAdapter extends RecyclerView.Adapter<YeuThichAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imageView.setImageBitmap(CovertBitmap(ls.get(position).getImage()));
+        Picasso.get().load(ls.get(position).getImage()).into(holder.imageView);
         holder.txtTenDoAn.setText(ls.get(position).getTenMonAn());
         holder.txtGiaDoAn.setText(String.valueOf(ls.get(position).getGiaMonAn()));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +116,7 @@ public class YeuThichAdapter extends RecyclerView.Adapter<YeuThichAdapter.ViewHo
         ImageView btnThem = view.findViewById(R.id.yeu_thich_dialog_mua_do_an_btn_them);
         Button btnMua = view.findViewById(R.id.yeu_thich_dialog_mua_do_an_btn_mua_ngay);
 
-        imageView.setImageBitmap(CovertBitmap(ls.get(position).getImage()));
+        Picasso.get().load(ls.get(position).getImage()).into(imageView);
         txtTenMonAn.setText(ls.get(position).getTenMonAn());
         txtGiaMonAn.setText(String.valueOf(ls.get(position).getGiaMonAn()));
         edtSoLuong.setText("1");
@@ -199,21 +200,6 @@ public class YeuThichAdapter extends RecyclerView.Adapter<YeuThichAdapter.ViewHo
             cardView = itemView.findViewById(R.id.item_yeu_thich_cardView);
             imgXoa = itemView.findViewById(R.id.item_yeu_thich_img_xoa);
         }
-    }
-    public Bitmap CovertBitmap(String path) {
-        Bitmap mbitmap = null;
-        try {
-            URL url = new URL(path);
-            InputStream inputStream = url.openConnection().getInputStream();
-
-            mbitmap = BitmapFactory.decodeStream(inputStream);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return mbitmap;
     }
     public void loadData() {
         SharedPreferences pref = context.getSharedPreferences("ID_FILE", Context.MODE_PRIVATE);
