@@ -25,7 +25,7 @@ public class ThanhVienDao {
         try {
             if (this.connection != null) {
 
-                String sqlQuery = "SELECT * FROM ThanhVien ";
+                String sqlQuery = "SELECT * FROM ThanhVien ORDER BY idtv DESC";
 
                 Statement statement = this.connection.createStatement(); // khởi tạo cấu trúc truy vấn
 

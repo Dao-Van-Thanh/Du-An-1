@@ -31,7 +31,10 @@ public class DoAnDAO {
             try {
                 if (this.connection != null) {
 
-                    String sqlQuery = "select da.idDoAn,da.image,da.tenDoAn,da.gia,lda.tenLoai,da.idLoaiDoAN from DoAn da inner join LoaiDoAn lda on da.idLoaiDoAn = lda.idLoaiDoAn";
+                    String sqlQuery = "SELECT da.idDoAn, da.image, da.tenDoAn, da.gia, lda.tenLoai, da.idLoaiDoAn\n" +
+                            "FROM DoAn da\n" +
+                            "INNER JOIN LoaiDoAn lda ON da.idLoaiDoAn = lda.idLoaiDoAn\n" +
+                            "ORDER BY da.idDoAn DESC\n";
 
                     Statement statement = this.connection.createStatement(); // khởi tạo cấu trúc truy vấn
 

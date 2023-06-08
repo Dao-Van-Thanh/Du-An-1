@@ -24,7 +24,7 @@ public class DoAnDAO {
         try {
             if (this.connection != null) {
 
-                String sqlQuery = "SELECT * FROM DoAn WHERE idLoaiDoAn=" + loaiDoAn;
+                String sqlQuery = "SELECT * FROM DoAn WHERE idLoaiDoAn=" + loaiDoAn + " ORDER BY idDoAn DESC";
 
                 Statement statement = this.connection.createStatement(); // khởi tạo cấu trúc truy vấn
 

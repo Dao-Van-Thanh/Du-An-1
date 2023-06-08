@@ -25,7 +25,6 @@ public class fragmentNguoiDung extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_nguoi_dung, container, false);
-        btnThongTin = v.findViewById(R.id.fragment_nguoiDung_btn_thongTin);
         btnDangXuat = v.findViewById(R.id.fragment_nguoiDung_btn_dangXuat);
         btnDoiMatKhau = v.findViewById(R.id.fragment_nguoiDung_btn_doiMatKhau);
 
